@@ -34,26 +34,41 @@
     width: 100%;
     padding: 12px;
   }
-/* Fix navbar overlap on mobile */
+/* ✅ Final mobile fix */
+@media (max-width: 480px) {
   .navbar {
-    flex-direction: column;   /* stack items vertically */
-    align-items: center;      /* center everything */
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .navbar .logo img {
-    height: 60px;
-    margin-bottom: 8px;       /* space below logo */
+  .navbar .logo {
+    margin-bottom: 8px;
   }
 
   .course-title {
-    position: static;         /* remove absolute positioning */
-    transform: none;
-    margin: 0 auto 8px auto;  /* center + small margin */
+    margin: 8px 0;
     text-align: center;
-    font-size: 16px;          /* smaller font for mobile */
+    font-size: 16px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .navbar ul li {
+    margin: 5px 0;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
   }
 }
+
 
 
 /* ======== General Page Styling ======== */
@@ -684,6 +699,7 @@ button.btn-upload {
 button.btn-upload:hover {
   background-color: #0066cc !important; /* darker blue */
 }
+
 
 
 
