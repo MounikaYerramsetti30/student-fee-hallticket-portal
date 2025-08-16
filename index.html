@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hall Ticket Portal - GIET</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Extra responsive styling for process flow */
+    .process-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media (min-width: 992px) { /* Laptop/Desktop */
+      .process-flow {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .process-flow .arrow {
+        transform: rotate(0deg); /* arrows sideways */
+        margin: 0 15px;
+      }
+    }
+    @media (max-width: 991px) { /* Tablet & Mobile */
+      .process-flow .arrow {
+        transform: rotate(90deg); /* keep arrows downwards */
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar custom-navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="logo">
+          <img src="giet-logo.jpg" alt="GIET Logo">
+        </div>
+
+        <!-- Center: Course Name -->
+        <div class="course-title">
+          CSE (DATA SCIENCE)
+        </div>
+
+        <!-- Mobile menu toggle -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Download Hall Ticket</a></li>
+            <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Welcome Section -->
+  <main>
+    <section class="welcome container text-center text-lg-start">
+      <h2 class="text-center">Welcome to the Hall Ticket Portal</h2>
+      <p class="text-center">Use this portal to check your fee status and download your hall ticket with ease.</p>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process container">
+      <h3>Process to Download Hall Ticket</h3>
+      <div class="process-flow">
+        <div class="step">1. Go to the <strong>Download Hall Ticket</strong> page</div>
+        <div class="arrow">↓</div>
+        <div class="step">2. Login using your <strong>Student ID</strong></div>
+        <div class="arrow">↓</div>
+        <div class="step">3. Check your fee details</div>
+        <div class="arrow">↓</div>
+        <div class="step">4. If there is no due, you can download the hall ticket</div>
+        <div class="arrow">↓</div>
+        <div class="step">5. If you have dues, upload payment receipt to update status</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

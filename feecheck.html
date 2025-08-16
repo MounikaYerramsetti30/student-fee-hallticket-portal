@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fee Check</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation Bar -->
+  <header>
+    <nav class="navbar custom-navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="logo">
+          <img src="giet-logo.jpg" alt="GIET Logo">
+        </div>
+
+        <!-- Center: Course Name -->
+        <div class="course-title">
+          CSE (DATA SCIENCE)
+        </div>
+
+        <!-- Mobile menu toggle -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Download Hall Ticket</a></li>
+            <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact Support</a></li>
+            <li class="navbar-right"><a href="#" class="logout-btn" id="logoutBtn">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<main>
+  <div class="fee-container">
+    <h2>Fee Status</h2>
+    <div id="studentDetails"></div>
+  </div>
+</main>
+
+<div id="ticketTemplate" style="display:none;">
+    <!-- College Header -->
+    <div class="header">
+        <h2 class="college-name">GODAVARI INSTITUTE OF ENGINEERING & TECHNOLOGY(A)</h2>
+        <p class="sub-header">
+            Approved By AICTE | NAAC ‘A++’ | Recognized by UGC, U/Sec.2(f) & 12(B) |
+            Permanently Affiliated to JNTUK, Kakinada
+        </p>
+    </div>
+
+    <!-- Department & Title -->
+    <div class="title-section">
+        <h3 class="department-name">DEPARTMENT OF CSE (DATA SCIENCE)</h3>
+        <h3 class="hall-ticket-title">HALL TICKET: MID I EXAMINATIONS, IV B. TECH I SEM (A.Y: 2025-2026)</h3>
+    </div>
+
+    <!-- Student Info -->
+    <div class="student-info">
+        <p><strong>HALL TICKET NUMBER:</strong> <span id="ticketRoll"></span></p>
+        <p><strong>NAME:</strong> <span id="ticketName"></span></p>
+        <p><strong>BRANCH:</strong> <span id="ticketBranch"></span></p>
+        <p><strong>EXAM TIMINGS:</strong> OBJECTIVE EXAM (2.30 P.M TO 2.40 P.M),
+            DESCRIPTIVE EXAM (2.40 P.M TO 4.10 P.M)</p>
+    </div>
+
+    <!-- Exam Timetable -->
+    <table class="exam-table">
+        <thead>
+            <tr>
+                <th>DATE</th>
+                <th>SUBJECTS OF EXAMINATION</th>
+                <th>INVIGILATOR'S SIGN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>18.08.2025</td><td>CLOUD COMPUTING</td><td></td></tr>
+            <tr><td>19.08.2025</td><td>SOFTWARE TESTING METHODOLOGIES</td><td></td></tr>
+            <tr><td>20.08.2025</td><td>DEEP LEARNING TECHNIQUES</td><td></td></tr>
+            <tr><td>21.08.2025</td><td>INTRODUCTION TO EMBEDDED SYSTEMS</td><td></td></tr>
+            <tr><td>22.08.2025</td><td>DIGITAL MARKETING</td><td></td></tr>
+            <tr><td>23.08.2025</td><td>UHV-2 UNDERSTANDING HARMONY</td><td></td></tr>
+        </tbody>
+    </table>
+
+    <!-- Signatures -->
+    <div class="signatures">
+        <div class="sign-box">SIGNATURE OF STUDENT</div>
+        <div class="sign-box">SIGNATURE OF HOD</div>
+    </div>
+</div>
+
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Student data -->
+<script src="data.js"></script>
+<!-- Main script -->
+<script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
