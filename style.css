@@ -42,11 +42,12 @@
   }
 
   .navbar .logo {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    height : 60px;
   }
 
   .course-title {
-    margin: 8px 0;
+    margin-top: 10px;
     text-align: center;
     font-size: 16px;
   }
@@ -699,6 +700,7 @@ button.btn-upload {
 button.btn-upload:hover {
   background-color: #0066cc !important; /* darker blue */
 }
+
 
 
 
