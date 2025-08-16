@@ -21,52 +21,29 @@
 
 /* For mobile screens */
 @media (max-width: 480px) {
-  .step {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .arrow {
-    font-size: 18px;
-  }
-
-  .btn {
-    width: 100%;
-    padding: 12px;
-  }
   .navbar {
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
   }
 
   .navbar .logo img {
-    margin-bottom: 8px;
     max-height: 55px;
+    margin-bottom: 8px;
   }
 
   .course-title {
+    font-size: 16px;
     margin-top: 5px;
     text-align: center;
-    font-size: 16px;
   }
 
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin: 10px 0;
-  }
-
-  .navbar ul li {
-    margin: 5px 0;
-  }
-
-  .navbar-right {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
+  /* Fix hamburger button */
+  .menu-toggle {
+    margin-top: 8px;       /* push below title */
+    align-self: center;    /* center it */
   }
 }
+
 
 
 
@@ -698,6 +675,7 @@ button.btn-upload {
 button.btn-upload:hover {
   background-color: #0066cc !important; /* darker blue */
 }
+
 
 
 
