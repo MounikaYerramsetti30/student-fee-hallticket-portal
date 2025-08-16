@@ -36,7 +36,8 @@
   }
 
   .course-title {
-    margin-top: 0;            /* reset */
+    margin-top: 15px;/* reset */
+    align-self: center;
     margin-bottom: 10px;      /* spacing before menu */
     font-size: 16px;
     display: block;           /* forces it onto its own line */
@@ -679,6 +680,7 @@ button.btn-upload {
 button.btn-upload:hover {
   background-color: #0066cc !important; /* darker blue */
 }
+
 
 
 
