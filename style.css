@@ -19,37 +19,40 @@
   }
 }
 
-/* For mobile screens */
+/* For mobile screens: logo, title, menu stack nicely */
 @media (max-width: 480px) {
   .navbar {
-    flex-direction: column;   /* stack logo, title, menu */
-    align-items: center;      /* center everything */
+    flex-direction: column;   /* Stack everything vertically */
+    align-items: center;      /* Center all items */
     text-align: center;
+    padding: 0.5rem 0.2rem;   /* Less side padding on mobile */
   }
-
-  .navbar .logo {
-    margin-bottom: 10px;      /* push title down */
+  .logo {
+    width: 100%;              /* Logo fills width */
+    display: flex;
+    justify-content: center;
   }
-
   .navbar .logo img {
-    max-height: 55px;         /* shrink logo */
+    max-height: 50px;
+    width: auto;
+    margin: 0 auto 8px auto;  /* Center image, gap below */
   }
-
   .course-title {
-    margin-top: 15px;/* reset */
-    align-self: center;
-    margin-bottom: 10px;      /* spacing before menu */
-    font-size: 16px;
-    margin: 10px;
-    display: block;           /* forces it onto its own line */
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 12px 0;       /* Space below title */
+    font-size: 17px;
+    padding: 2px 0;
+    animation: glowPulse 4s ease-in-out infinite;
   }
-
-  .menu-toggle {
-    margin-top: 5px;          /* spacing after title */
-    align-self: center;       /* center it */
+  /* If you use .navbar-right for buttons/links */
+  .navbar-right {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0 0 0;
   }
 }
-
 
 
 
@@ -681,6 +684,7 @@ button.btn-upload {
 button.btn-upload:hover {
   background-color: #0066cc !important; /* darker blue */
 }
+
 
 
 
