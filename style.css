@@ -43,7 +43,7 @@
     margin: 0 auto 5px auto !important;
     display: block !important;
   }
-  .navbar .course-title {
+  .course-title {
     order: 2 !important;
     width: 100% !important;
     display: block !important;
@@ -690,6 +690,7 @@ button.btn-upload {
 button.btn-upload:hover {
   background-color: #0066cc !important; /* darker blue */
 }
+
 
 
 
