@@ -10,7 +10,6 @@ body {
 .navbar {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
   align-items: center;
   justify-content: space-between;
   background: #004080;
@@ -18,10 +17,10 @@ body {
   z-index: 1000;
 }
 
-.navbar .logo img {
-  height: 70px;
+.logo img {
+  height: 65px;
   width: auto;
-  border-radius: 15px;
+  border-radius: 10px;
   border: 2px solid white;
   background-color: white;
   padding: 3px;
@@ -29,8 +28,8 @@ body {
 
 /* Course Title */
 .course-title {
-  margin: 8px auto 10px auto;
-  font-size: clamp(20px, 2vw, 22px);
+  margin: 8px auto;
+  font-size: clamp(18px, 2vw, 22px);
   font-weight: bold;
   color: white;
   letter-spacing: 1px;
@@ -75,10 +74,11 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-  text-decoration: underline;
+  color: #5ee7df;
 }
 
 /* Hamburger Toggle */
@@ -99,7 +99,7 @@ body {
     padding: 10px 0;
   }
 
-  .navbar .logo {
+  .logo {
     order: 1;
     display: flex;
     justify-content: center;
@@ -110,7 +110,6 @@ body {
   .course-title {
     order: 2;
     width: 100%;
-    text-align: center;
     margin-bottom: 10px;
   }
 
@@ -158,29 +157,20 @@ body {
   transform: scale(1.05);
 }
 
-.navbar-right {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .navbar-right {
-    width: 100%;
-    justify-content: center;
-    margin: 10px 0 0 0;
-  }
-}
-
 /* ===== Welcome Section ===== */
 .welcome {
   text-align: center;
   padding: 20px;
 }
 
+.welcome h2 {
+  color: #004080;
+  margin-bottom: 8px;
+}
+
 /* ===== Process Section ===== */
 .process {
-  background: #f9f9f9;
+  background: #ffffff;
   padding: 30px;
   margin: 30px auto;
   border-radius: 12px;
@@ -199,17 +189,18 @@ body {
 .process-flow {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 18px;
 }
 
 .step {
-  background: #ffffff;
+  background: #f9f9f9;
   border: 1px solid #004080;
   border-radius: 10px;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
+  padding: 12px 18px;
+  width: 100%;
   font-weight: 500;
+  text-align: left;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -219,30 +210,26 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
-.step-number {
-  background: #004080;
-  color: white;
+.arrow {
+  font-size: 22px;
+  color: #004080;
   font-weight: bold;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 15px;
-  flex-shrink: 0;
 }
 
-/* Mobile Step Size */
-@media (max-width: 480px) {
-  .step {
-    font-size: 14px;
-    padding: 12px 15px;
+/* ===== Responsive Process Flow ===== */
+@media (min-width: 768px) {
+  .process-flow {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .step-number {
-    width: 26px;
-    height: 26px;
-    font-size: 13px;
+  .step {
+    max-width: 180px;
+    text-align: center;
+  }
+  .arrow {
+    transform: rotate(-90deg); /* ↓ becomes → */
+    margin: 0 10px;
   }
 }
 
@@ -263,185 +250,4 @@ body {
 
 .btn:hover {
   background: #0066cc;
-}
-
-/* ===== Login & Admin Pages ===== */
-.login-container,
-#adminLoginForm,
-#excelUploadContainer {
-  background: #ffffff;
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.login-container h2,
-#adminLoginForm h1,
-#excelUploadContainer h1 {
-  color: #004080;
-  margin-bottom: 20px;
-}
-
-.login-container input,
-#adminLoginForm input,
-#excelUploadContainer input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-#adminLoginForm button,
-#excelUploadContainer button,
-.login-container button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 15px;
-  background-color: #004080;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#adminLoginForm button:hover,
-#excelUploadContainer button:hover,
-.login-container button:hover {
-  background-color: #0066cc;
-}
-
-/* DOB Note */
-.dob-note {
-  font-size: 14px;
-  color: #004080;
-  margin-top: 5px;
-  text-align: center;
-  font-style: italic;
-}
-
-.dob-note b {
-  color: #0077cc;
-}
-
-/* ===== Fee Container ===== */
-.fee-container {
-  background: #ffffff;
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-.fee-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #004080;
-}
-
-.fee-status.success {
-  background-color: #e6ffed;
-  color: #007f33;
-  border: 1px solid #007f33;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 15px;
-}
-
-.fee-status.due {
-  background-color: #ffe6e6;
-  color: #a80000;
-  border: 1px solid #a80000;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 15px;
-}
-
-input::placeholder {
-  color: #888;
-  font-style: italic;
-}
-
-/* ===== Ticket Template ===== */
-#ticketTemplate {
-  width: 800px;
-  padding: 30px;
-  border: 2px solid black;
-  font-family: Arial, sans-serif;
-  background-color: #fff;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.college-name {
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.sub-header {
-  font-size: 12px;
-}
-
-.title-section {
-  text-align: center;
-  margin: 15px 0;
-}
-
-.department-name {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.hall-ticket-title {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.student-info {
-  margin: 10px 0 20px 0;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.exam-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  margin-top: 20px;
-}
-
-.exam-table th, .exam-table td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: left;
-}
-
-.exam-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-.signatures {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-
-.sign-box {
-  width: 40%;
-  text-align: center;
-  border-top: 1px solid black;
-  padding-top: 5px;
-  font-weight: bold;
 }
