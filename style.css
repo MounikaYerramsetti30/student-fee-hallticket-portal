@@ -1,91 +1,3 @@
-/* For tablets and smaller */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar ul li {
-    margin: 10px 0;
-  }
-
-  .process-flow {
-    width: 100%;
-  }
-}
-
-/* For mobile screens: logo, title, menu stack nicely */
-/* ===== Mobile Optimization ===== */
-@media (max-width: 480px) {
-  .navbar {
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 10px 0 !important;
-  }
-
-  .navbar .container-fluid {
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-
-  .navbar .logo {
-    order: 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 6px;
-  }
-
-  .navbar .logo img {
-    max-width: 70px;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid #fff;
-  }
-
-  .course-title {
-    order: 2;
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 0 10px 0;
-  }
-
-  .navbar-toggler {
-    order: 3;
-    margin: 0 auto;
-  }
-
-  .navbar ul {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
-
-  .navbar ul li {
-    margin: 8px 0;
-  }
-
-  .step {
-    font-size: 14px;
-    padding: 12px 15px;
-  }
-  .step-number {
-    width: 26px;
-    height: 26px;
-    font-size: 13px;
-  }
-}
-
-
-
 /* ======== General Page Styling ======== */
 body {
   font-family: Arial, sans-serif;
@@ -95,45 +7,43 @@ body {
 }
 
 /* ======== Navigation Bar ======== */
-
 .navbar {
   display: flex;
   flex-wrap: wrap;
-  position:relative;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   background: #004080;
   padding: 0.5rem 1rem;
+  z-index: 1000;
 }
 
 .navbar .logo img {
-  height: 70px; 
-  width: auto; 
-  border-radius: 15px; /* Rounded edges instead of circle */
+  height: 70px;
+  width: auto;
+  border-radius: 15px;
   border: 2px solid white;
   background-color: white;
   padding: 3px;
 }
 
-/* Centered course title */
+/* Course Title */
 .course-title {
-  position: static;
-  transform: none;
-  margin: 8px auto 10px auto; 
-  font-size: clamp(22px, 2vw, 22px); /* min 16px, preferred 2vw, max 22px */
+  margin: 8px auto 10px auto;
+  font-size: clamp(20px, 2vw, 22px);
   font-weight: bold;
   color: white;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: 'Segoe UI', sans-serif;
-  border-bottom: 2px solid #5ee7df; /* soft cyan */
+  border-bottom: 2px solid #5ee7df;
   padding: 5px 10px;
   text-shadow: 0 0 5px rgba(94, 231, 223, 0.7),
                0 0 10px rgba(94, 231, 223, 0.5);
   animation: glowPulse 4s ease-in-out infinite;
+  text-align: center;
 }
 
-/* Soft cyan glow with pause */
 @keyframes glowPulse {
   0%, 20% {
     text-shadow: 0 0 5px rgba(94, 231, 223, 0.7),
@@ -149,7 +59,7 @@ body {
   }
 }
 
-
+/* Nav Links */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -171,12 +81,72 @@ body {
   text-decoration: underline;
 }
 
-/* Logout button specific styling */
-.logout-btn {
-  background-color: #ff4d4d; /* Soft red */
+/* Hamburger Toggle */
+.navbar-toggler {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
   color: white;
-  padding: 4px 10px; /* Bigger clickable area */
-  border-radius: 6px; /* Rounded corners */
+  cursor: pointer;
+}
+
+/* ===== Responsive Navbar ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .navbar .logo {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .course-title {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .navbar-toggler {
+    order: 3;
+    display: block;
+    margin: 5px auto 10px auto;
+  }
+
+  .navbar ul {
+    order: 4;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #004080;
+    padding: 10px 0;
+    margin-top: 5px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/* ===== Logout Button ===== */
+.logout-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
@@ -184,26 +154,31 @@ body {
 }
 
 .logout-btn:hover {
-  background-color: #e60000; /* Darker red on hover */
-  transform: scale(1.05); /* Slight zoom */
+  background-color: #e60000;
+  transform: scale(1.05);
 }
 
-/* To align Logout button to the right of the navbar */
 .navbar-right {
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .navbar-right {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0 0 0;
+  }
+}
 
-/* ======== Welcome Section ======== */
+/* ===== Welcome Section ===== */
 .welcome {
   text-align: center;
   padding: 20px;
 }
 
-/* ======== Process Section ======== */
-/* ======== Process Flow (Better Styling) ======== */
+/* ===== Process Section ===== */
 .process {
   background: #f9f9f9;
   padding: 30px;
@@ -224,7 +199,7 @@ body {
 .process-flow {
   display: flex;
   flex-direction: column;
-  gap: 18px; /* space between steps */
+  gap: 18px;
 }
 
 .step {
@@ -258,11 +233,7 @@ body {
   flex-shrink: 0;
 }
 
-.arrow {
-  display: none; /* hide arrows, cleaner with numbered steps */
-}
-
-/* Mobile adjustments */
+/* Mobile Step Size */
 @media (max-width: 480px) {
   .step {
     font-size: 14px;
@@ -275,7 +246,7 @@ body {
   }
 }
 
-/* ======== Buttons ======== */
+/* ===== Buttons ===== */
 .btn {
   display: inline-block;
   margin-top: 20px;
@@ -285,48 +256,81 @@ body {
   font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .btn:hover {
   background: #0066cc;
 }
 
-
-/* ======== Login Page ======== */
-.login-container {
+/* ===== Login & Admin Pages ===== */
+.login-container,
+#adminLoginForm,
+#excelUploadContainer {
   background: #ffffff;
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-.login-container h2 {
   text-align: center;
-  margin-bottom: 20px;
+}
+
+.login-container h2,
+#adminLoginForm h1,
+#excelUploadContainer h1 {
   color: #004080;
+  margin-bottom: 20px;
 }
 
-.login-container label {
-  display: block;
-  margin: 10px 0 5px;
-  font-weight: bold;
-}
-
-.login-container input {
+.login-container input,
+#adminLoginForm input,
+#excelUploadContainer input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #cccccc;
+  margin: 10px 0;
   border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
+#adminLoginForm button,
+#excelUploadContainer button,
 .login-container button {
   width: 100%;
+  padding: 10px;
   margin-top: 15px;
+  background-color: #004080;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ======== Fee Check Page ======== */
+#adminLoginForm button:hover,
+#excelUploadContainer button:hover,
+.login-container button:hover {
+  background-color: #0066cc;
+}
+
+/* DOB Note */
+.dob-note {
+  font-size: 14px;
+  color: #004080;
+  margin-top: 5px;
+  text-align: center;
+  font-style: italic;
+}
+
+.dob-note b {
+  color: #0077cc;
+}
+
+/* ===== Fee Container ===== */
 .fee-container {
   background: #ffffff;
   max-width: 500px;
@@ -342,24 +346,6 @@ body {
   color: #004080;
 }
 
-.fee-container p {
-  font-size: 16px;
-  margin: 8px 0;
-}
-
-.fee-container .btn {
-  margin-top: 15px;
-}
-
-/* ======== Center All Main Headings ======== */
-header h1, 
-header h2 {
-  text-align: center;
-  margin: 0;
-}
-
-
-/* ======== Fee Status Messages ======== */
 .fee-status.success {
   background-color: #e6ffed;
   color: #007f33;
@@ -383,358 +369,79 @@ input::placeholder {
   font-style: italic;
 }
 
-
-/* ======== Admin Page ======== */
-#adminLoginForm, #excelUploadContainer {
-  background: #ffffff;
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-/* Headings */
-#adminLoginForm h1, #excelUploadContainer h1 {
-  color: #004080;
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-
-/* Input fields */
-#adminLoginForm input, #excelUploadContainer input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #004080;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background: #0066cc;
-}
-
-#adminLoginForm button, #excelUploadContainer button {
-  width: 95%;
-  padding: 10px;
-  margin-top: 15px;
-  background-color: #004080;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#adminLoginForm button:hover, #excelUploadContainer button:hover {
-  background-color: #0066cc;
-}
-
-/* Optional: show upload container after login */
-#excelUploadContainer {
-  display: none;
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-  #adminLoginForm, #excelUploadContainer {
-    width: 90%;
-    padding: 20px;
-  }
-
-  #adminLoginForm h1, #excelUploadContainer h1 {
-    font-size: 20px;
-  }
-}
-
-/* Styling for DOB note under login form */
-.dob-note {
-  font-size: 14px;
-  color: #004080;        /* Matches navbar color */
-  margin-top: 5px;
-  text-align: center;
-  font-style: italic;
-}
-
-.dob-note b {
-  color: #0077cc;        /* Highlight the format */
-}
-
-
-
-/* Login Form */
-#adminLoginForm {
-    max-width: 400px;
-    margin: 40px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
-    border-radius: 8px;
-}
-
-#adminLoginForm h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#adminLoginForm input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#adminLoginForm button {
-    width: 100%;
-    background-color: #004080;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#adminLoginForm button:hover {
-    background-color: #0059b3;
-}
-
-/* Admin Actions Dashboard */
-#adminActions {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
-    border-radius: 8px;
-}
-
-#adminActions h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-#adminActions section {
-    margin-bottom: 30px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-}
-
-#adminActions h2 {
-    margin-bottom: 15px;
-    color: #004080;
-}
-
-#adminActions input {
-    padding: 10px;
-    margin: 5px 0;
-    width: calc(100% - 20px);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#adminActions button {
-    background-color: #004080;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-#adminActions button:hover {
-    background-color: #0059b3;
-}
-
-/* Admin Message */
-#adminMessage {
-    text-align: center;
-    color: green;
-    font-size: 16px;
-}
-
+/* ===== Ticket Template ===== */
 #ticketTemplate {
-    width: 800px;
-    padding: 30px;
-    border: 2px solid black;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
+  width: 800px;
+  padding: 30px;
+  border: 2px solid black;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
 }
 
-/* College Header */
 .header {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .college-name {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 .sub-header {
-    font-size: 12px;
+  font-size: 12px;
 }
 
-/* Department & Title */
 .title-section {
-    text-align: center;
-    margin: 15px 0;
+  text-align: center;
+  margin: 15px 0;
 }
 
 .department-name {
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .hall-ticket-title {
-    font-weight: bold;
-    font-size: 14px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-/* Student Info */
 .student-info {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 1.6;
+  margin: 10px 0 20px 0;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-/* Exam Table */
 .exam-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 20px;
 }
 
 .exam-table th, .exam-table td {
-    border: 1px solid black; /* Full border */
-    padding: 8px;
-    text-align: left;
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
 }
 
 .exam-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 
-/* Signatures */
 .signatures {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 .sign-box {
-    width: 40%;
-    text-align: center;
-    border-top: 1px solid black;
-    padding-top: 5px;
-    font-weight: bold;
-}
-
-/* Logout button specific styling */
-.logout-btn {
-  background-color: #ff4d4d; /* Soft red */
-  color: white;
-  padding: 6px 12px; /* Bigger clickable area */
-  border-radius: 6px; /* Rounded corners */
+  width: 40%;
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 5px;
   font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.logout-btn:hover {
-  background-color: #e60000; /* Darker red on hover */
-  transform: scale(1.05); /* Slight zoom */
-}
-
-/* To align Logout button to the right of the navbar */
-.navbar-right {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-
-/* Responsive adjustment */
-@media (max-width: 768px) {
-  .navbar-right {
-    width: 100%;
-    justify-content: center;
-    margin: 10px 0 0 0;
-  }
-}
-
-.login-container button.btn,
-#adminLoginForm button.btn,
-#excelUploadContainer button.btn {
-  display: inline-block;
-  width: 100%;          /* optional: full width */
-  padding: 10px 20px;
-  background: #004080;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.login-container button.btn:hover,
-#adminLoginForm button.btn:hover,
-#excelUploadContainer button.btn:hover, .download-btn {
-  background-color: #0066cc;
-}
-
-button.btn-download {
-  background-color: #004080 !important; /* green */
-  color: white !important;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button.btn-download:hover {
-  background-color: #0066cc !important; /* darker green */
-}
-
-button.btn-upload {
-  background-color: #004080 !important; /* blue */
-  color: white !important;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button.btn-upload:hover {
-  background-color: #0066cc !important; /* darker blue */
-}
-
