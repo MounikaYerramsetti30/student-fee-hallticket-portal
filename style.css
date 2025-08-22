@@ -1,24 +1,29 @@
-/* For tablets and smaller */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+  .navbar .container-fluid {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
+  .navbar-nav {
+    flex-direction: row !important;
+    align-items: center !important;
+    padding-left: 10px;
   }
-
-  .navbar ul li {
-    margin: 10px 0;
+  .navbar-nav .nav-item {
+    margin: 0 6px;
   }
-
-  .process-flow {
-    width: 100%;
+  .course-title {
+    font-size: 13px !important;
+    text-align: center !important;
+    margin: 0 4px !important;
+  }
+  .logo img {
+    max-width: 55px !important;
+    max-height: 35px !important;
   }
 }
 
+ 
 /* For mobile screens: logo, title, menu stack nicely */
 @media (max-width: 480px) {
   .navbar .container-fluid {
@@ -690,3 +695,4 @@ button.btn-upload {
 button.btn-upload:hover {
   background-color: #0066cc !important; /* darker blue */
 }
+
