@@ -9,53 +9,29 @@ body {
 /* ======== Navigation Bar ======== */
 .navbar {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background: #004080;
   padding: 0.5rem 1rem;
-  z-index: 1000;
 }
 
 .logo img {
-  height: 65px;
+  height: 60px;
   width: auto;
-  border-radius: 10px;
-  border: 2px solid white;
-  background-color: white;
+  border-radius: 6px;
+  background: white;
   padding: 3px;
 }
 
-/* Course Title */
+/* Department Name */
 .course-title {
-  margin: 8px auto;
-  font-size: clamp(18px, 2vw, 22px);
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
   font-weight: bold;
   color: white;
-  letter-spacing: 1px;
   text-transform: uppercase;
   font-family: 'Segoe UI', sans-serif;
-  border-bottom: 2px solid #5ee7df;
-  padding: 5px 10px;
-  text-shadow: 0 0 5px rgba(94, 231, 223, 0.7),
-               0 0 10px rgba(94, 231, 223, 0.5);
-  animation: glowPulse 4s ease-in-out infinite;
-  text-align: center;
-}
-
-@keyframes glowPulse {
-  0%, 20% {
-    text-shadow: 0 0 5px rgba(94, 231, 223, 0.7),
-                 0 0 10px rgba(94, 231, 223, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 15px rgba(94, 231, 223, 1),
-                 0 0 25px rgba(94, 231, 223, 0.9);
-  }
-  80%, 100% {
-    text-shadow: 0 0 5px rgba(94, 231, 223, 0.7),
-                 0 0 10px rgba(94, 231, 223, 0.5);
-  }
 }
 
 /* Nav Links */
@@ -64,70 +40,70 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-}
-
-.navbar ul li {
-  margin-left: 20px;
+  gap: 20px;
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
 .navbar ul li a:hover {
   color: #5ee7df;
 }
 
-/* Hamburger Toggle */
-.navbar-toggler {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
+/* Logout Button */
+.logout-btn {
+  background: #ff4d4d;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/* ===== Responsive Navbar ===== */
+.logout-btn:hover {
+  background: #e60000;
+}
+
+/* Hamburger Toggle (Mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-  }
-
-  .logo {
-    order: 1;
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    margin-bottom: 6px;
   }
 
   .course-title {
     order: 2;
+    margin: 10px 0;
     width: 100%;
-    margin-bottom: 10px;
   }
 
-  .navbar-toggler {
-    order: 3;
+  .menu-toggle {
     display: block;
-    margin: 5px auto 10px auto;
+    order: 3;
   }
 
   .navbar ul {
-    order: 4;
     display: none;
     flex-direction: column;
     width: 100%;
-    background: #004080;
+    background: #003366;
     padding: 10px 0;
-    margin-top: 5px;
     border-radius: 0 0 8px 8px;
+    order: 4;
   }
 
   .navbar ul.show {
@@ -135,26 +111,9 @@ body {
   }
 
   .navbar ul li {
-    margin: 10px 0;
     text-align: center;
+    margin: 8px 0;
   }
-}
-
-/* ===== Logout Button ===== */
-.logout-btn {
-  background-color: #ff4d4d;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.logout-btn:hover {
-  background-color: #e60000;
-  transform: scale(1.05);
 }
 
 /* ===== Welcome Section ===== */
@@ -170,11 +129,11 @@ body {
 
 /* ===== Process Section ===== */
 .process {
-  background: #ffffff;
+  background: #fff;
   padding: 30px;
   margin: 30px auto;
   border-radius: 12px;
-  max-width: 700px;
+  max-width: 800px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
@@ -199,15 +158,9 @@ body {
   border-radius: 10px;
   padding: 12px 18px;
   width: 100%;
+  text-align: center;
   font-weight: 500;
-  text-align: left;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.step:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .arrow {
@@ -216,7 +169,7 @@ body {
   font-weight: bold;
 }
 
-/* ===== Responsive Process Flow ===== */
+/* Horizontal flow on desktops */
 @media (min-width: 768px) {
   .process-flow {
     flex-direction: row;
@@ -225,7 +178,6 @@ body {
   }
   .step {
     max-width: 180px;
-    text-align: center;
   }
   .arrow {
     transform: rotate(-90deg); /* ↓ becomes → */
@@ -233,21 +185,104 @@ body {
   }
 }
 
-/* ===== Buttons ===== */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
+/* ===== Tables ===== */
+.table-container {
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
   background: #004080;
   color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
+}
+
+/* ===== Buttons ===== */
+button, .btn {
+  background: #004080;
+  color: white;
   border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
 }
 
-.btn:hover {
-  background: #0066cc;
+button:hover, .btn:hover {
+  background: #003366;
+}
+
+/* ===== Forms ===== */
+form {
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ===== Hall Ticket Template (PDF Preview) ===== */
+.hallticket {
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.hallticket h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #004080;
+}
+
+.hallticket .student-info {
+  margin-bottom: 20px;
+}
+
+.hallticket .student-info p {
+  margin: 5px 0;
+}
+
+.hallticket table {
+  margin-top: 15px;
+}
+
+.signature-section {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
 }
