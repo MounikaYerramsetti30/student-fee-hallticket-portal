@@ -14,28 +14,32 @@
 <body>
   <!-- Navigation Bar -->
   <header>
-    <nav class="navbar custom-navbar">
-      <!-- Logo -->
-      <div class="logo">
-        <img src="giet-logo.jpg" alt="GIET Logo">
-      </div>
-
-      <!-- Department Title -->
-      <div class="course-title">
-        CSE (DATA SCIENCE)
-      </div>
-
-      <!-- Mobile menu toggle -->
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-      <!-- Nav links -->
-      <ul id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Download Hall Ticket</a></li>
-        <li><a href="admin.html">Admin</a></li>
-        <li><a href="#">Contact Support</a></li>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <!-- Logo left -->
+    <div class="logo">
+      <img src="giet-logo.jpg" alt="GIET Logo">
+    </div>
+    <!-- Department Center -->
+    <div class="course-title mx-3">
+      CSE (DATA SCIENCE)
+    </div>
+    <!-- Toggler right -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Links right (in collapse) -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav flex-row ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Download Hall Ticket</a></li>
+        <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Support</a></li>
       </ul>
-    </nav>
+    </div>
+  </div>
+</nav>
   </header>
 
   <!-- Welcome Section -->
@@ -75,3 +79,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
